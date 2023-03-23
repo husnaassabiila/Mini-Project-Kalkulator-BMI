@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator BMI - Mini Project</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <nav id="header">
+        <img class="image-logo" src="https://assets.website-files.com/61af164800e38c4f53c60b4e/62a6a71f9e327c0716fde5c7_revou%20mc%20logo%20white.png">
+
+        <a href="https://journal.revou.co/revou-dalam-5-menit/"><button class="BtnAbout">About Us</button></a>
+    </nav>
+
+    <nav id="calculator">
+        <div class="container-calculator">
+            <h2 style="font-family: sans-serif; font-size: 16pt;">Kalkulator BMI</h2>
+            <p style="font-family: sans-serif; font-size: 12pt;">Berat Badan ideal adalah impian semua orang. Tidak hanya memiliki bentuk tubuh yang menunjang penampilan, berat badan ideal juga menandakan kondisi tubuh yang sehat. Bagaimana denganmu? Yuk, hitung sekarang di kalkulator BMI.</p>
+    
+            <div class="card">
+             <form class="form">
+                    <div class="form-group-jk">
+                        <strong>Jenis Kelamin</strong><br>
+                        <input type="radio" name="jenis-kelamin" value="p" id="p" required="true">
+                        <label for="jenis-kelamin">Pria</label>
+                        <input type="radio" name="jenis-kelamin" value="w" id="w" required="true">
+                        <label for="jenis-kelamin">Wanita</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="berat-badan">Berat Badan (kg)</label>
+                        <div class="icon-input">
+                            <i class="fa-solid fa-pencil"></i>
+                            <input type="number" name="berat-badan" required="true" id="berat-badan">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="usia">Usia (tahun)</label>
+                        <div class="icon-input">
+                            <i class="fa-solid fa-pencil"></i>
+                            <input type="number" name="usia" required="true" id="usia">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="tinggi-badan">Tinggi Badan (cm)</label>
+                        <div class="icon-input">
+                            <i class="fa-solid fa-pencil"></i>
+                            <input type="number" name="tinggi-badan" required="true" id="tinggi-badan">
+                        </div>
+                    </div>
+                
+                    <br>
+                    <div class="button-group">
+                        <button class="button" id="hitung" type="submit" onclick="validasi()">Hitung BMI</button>
+                        <button class="reset" id="reset">Reset</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="middle">
+            <p style="font-size: 15pt;">Keunggulan Fitur</p>
+            <ol type="1">
+                <li>Menghitung berat badan</li>
+                <li>Menentukan kategori berat badan ideal atau tidak</li>
+                <li>Mempersiapkan program penurunan berat badan</li>
+            </ol>
+
+            <p>Kalkulator ini hanya boleh digunakan oleh orang dewasa (wanita hamil atau menyusui tidak boleh mengandalkan pembacaan BMI ini) dan tidak ada tindakan yang harus diambil berdasarkan nilainya selain berkonsultasi dengan orang yang memenuhi syarat seperti dokter.</p>
+            <p>Kalkukator akan memberi Anda gambaran tentang perbandingan berat badan Anda dengan nilai umum. Indeks Massa Tubuh (atau BMI) dihitung sebagai berat badan Anda (dalam kilogram) dibagi dengan kuadrat tinggi badan Anda (dalam meter) atau BMI = Kg/M<sup>2</sup>.</p>
+            </div>
+        </div>
+
+        <div class="container-hasil">
+            <p style="font-size: 15pt; font-family: sans-serif; font-size: 15pt;">Hasil</p>
+            <div class="middle-hasil">
+            <form class="form">
+                <div class="form-group-hasil">
+                    <p style="font-size: 14pt;" id="komenhasil"></p>
+                    <div style="font-size: 25pt;" id="hasilnilai">00.00</div>
+                    <p style="font-size: 12pt;">Anda memiliki <span id="tipehasil"></span></p>
+
+                    <br>
+                    <div class="button-group">
+                        <button class="btn-download" type="button">Download Hasil BMI</button>
+                    </div>
+                </div>
+            </form>
+            </div>
+
+            <div class="middle-exp">
+            <p style="font-size: 13pt;" id="status-bmi"></p>
+            <p>Anda berada dalam kategori overweight atau berat badan berlebih.</p>
+            <p>Cara terbaik untuk menurunkan berat badan adalah dengan mengatur kalori makanan yang dikonsumsi dan berolahraga. Jika BMI Anda berada dalam kategori ini maka Anda dianjurkan untuk menurunkan berat badan hingga batas normal.</p>
+
+            <div class="button-group">
+                <a href="https://www.lighthouse-indonesia.com/complete-weightloss-google-keb/?gclid=Cj0KCQjw8e-gBhD0ARIsAJiDsaUWkIuKYtly9KbvupkHFDEsiP_bzWcg90Z_0D-_3LMFCYCtrO0F57waAgfzEALw_wcB"><button class="button-konsul">Konsultasi Ahli Gizi Via Aplikasi</button></a>
+                <a href="https://www.lighthouse-indonesia.com/pilihan_konsultasi/"><button class="button-regis">Registrasi Online Ahli Gizi</button></a>
+            </div>
+
+            <p>BMI tidak sepenuhnya mewakili diagnosis menyeluruh dari kesehatan tubuh dan resiko penyakit seseorang. Anda perlu konsultasi lebih lanjut mengenai resiko dan kekhawatiran Anda terkait dengan berat badan Anda.</p>
+            </div>
+
+            <div class="middle-sick">
+            <form class="form">
+                <div class="form-group-sick">
+                    <h4>Beberapa penyakit yang berasal dari kegemukan</h4>
+                    <p>Diabetes</p>
+                    <p>Hipertensi</p>
+                    <p>Sakit Jantung</p>
+                    <p>Osteoarthritis</p>
+
+                    <div class="button-group">
+                        <a href="https://www.lighthouse-indonesia.com/complete-weightloss-google-keb/?gclid=Cj0KCQjw8e-gBhD0ARIsAJiDsaUWkIuKYtly9KbvupkHFDEsiP_bzWcg90Z_0D-_3LMFCYCtrO0F57waAgfzEALw_wcB"><button class="BtnKonsul">Konsultasi Ahli Gizi Via Aplikasi</button></a>
+                        <a href="https://www.lighthouse-indonesia.com/pilihan_konsultasi/"><button class="BtnRegis">Registrasi Online Ahli Gizi</button></a>
+                    </div>
+                </div>
+            </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="footer">
+            <p>Download Aplikasi</p>
+            <img class="img-gplay" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/1024px-Google_Play_Store_badge_EN.svg.png">
+            <img class="img-apps" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Available_on_the_App_Store_%28black%29_SVG.svg/2560px-Available_on_the_App_Store_%28black%29_SVG.svg.png">
+    </div>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p id="modalText"></p>
+        </div>
+    </div>
+
+    <script src="js/index.js"></script>
+</body>
+</html>
